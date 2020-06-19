@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 li = new ArrayList<>();
                 for (DataSnapshot postsnapshot: dataSnapshot.getChildren()){
                     menulist Li = new menulist(postsnapshot.child("imgurl").getValue().toString(),
-                            "Name: "+ postsnapshot.child("f").getValue().toString(),
-                            "Price: " + postsnapshot.child("p").getValue().toString());
+                            ""+ postsnapshot.child("f").getValue().toString(),
+                            "" + postsnapshot.child("p").getValue().toString());
                     li.add(Li);
                 }
                 a = new adapter(li, getApplicationContext());

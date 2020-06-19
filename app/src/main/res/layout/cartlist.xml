@@ -8,6 +8,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         >
 
         <RelativeLayout
@@ -29,7 +30,7 @@
                 android:layout_marginLeft="100dp"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:text="name:"
+                android:text="Name: "
                 />
             <TextView
                 android:id="@+id/tv2"
@@ -37,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
-                android:text="price:"
+                android:text="Price: "
                 android:textStyle="bold"
                 android:textSize="30sp"
                 />
@@ -61,6 +62,7 @@
                 android:text=" "
                 android:textStyle="bold"
                 android:textSize="30sp"
+                android:paddingLeft="20dp"
                 />
 
             <TextView
@@ -72,6 +74,7 @@
                 android:text=" "
                 android:textStyle="bold"
                 android:textSize="30sp"
+                android:paddingLeft="20dp"
                 />
 
             <TextView
@@ -83,6 +86,7 @@
                 android:text=" "
                 android:textStyle="bold"
                 android:textSize="30sp"
+                android:paddingLeft="20dp"
                 />
 
         </RelativeLayout>
