@@ -39,6 +39,7 @@ public class adapter extends RecyclerView.Adapter<adapter.viewholder> {
         holder.tv1.setText(Li.getF());
         holder.tv2.setText(Li.getP());
         imgurl = Li.getImgurl();
+        holder.imgURL = imgurl;
         Picasso.get().load(imgurl).into(holder.img);
     }
 
@@ -52,6 +53,7 @@ public class adapter extends RecyclerView.Adapter<adapter.viewholder> {
         private ImageView img;
         private TextView tv1;
         private TextView tv2;
+        private String imgURL="";
         public viewholder(@NonNull View itemView) {
             super(itemView);
 
@@ -66,7 +68,7 @@ public class adapter extends RecyclerView.Adapter<adapter.viewholder> {
                     s.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     s.putExtra("f",tv1.getText().toString());
                     s.putExtra("p", tv2.getText().toString());
-                    s.putExtra("imgurl", imgurl);
+                    s.putExtra("imgurl", imgURL);
                     c.startActivity(s);
                 }
             });

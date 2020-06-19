@@ -8,6 +8,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         >
 
         <RelativeLayout
@@ -40,16 +41,7 @@
                 android:textStyle="bold"
                 android:textSize="30sp"
                 />
-            <Button
-                android:id="@+id/b"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:layout_marginTop="100dp"
-                android:layout_marginLeft="150dp"
-                />
+
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
