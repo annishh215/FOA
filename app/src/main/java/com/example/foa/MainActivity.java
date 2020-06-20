@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private Button vc;
     private RecyclerView rv;
     private RecyclerView.Adapter a;
     private List<menulist> li;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        vc = (Button)findViewById(R.id.vc);
         dbu = FirebaseDatabase.getInstance().getReference("menulist");
         rv = (RecyclerView)findViewById(R.id.rv);
         rv.setHasFixedSize(true);
@@ -56,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+
+        vc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getBaseContext(),CartActivity.class);
+                startActivity(i);
             }
         });
 

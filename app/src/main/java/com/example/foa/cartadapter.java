@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foa.R;
 import com.example.foa.cartlist;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,6 +24,7 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.viewholder> {
 
     private List<cartlist> cli;
     private Context ca;
+
 
     public cartadapter(List<cartlist> cli, Context ca) {
         this.cli = cli;
@@ -54,6 +59,10 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.viewholder> {
 
         private TextView tv4,tv5,tv6;
         private ImageView img;
+        private Button rb;
+        private DatabaseReference dbu;
+
+
 
         public viewholder(@NonNull View itemView) {
             super(itemView);
@@ -61,6 +70,19 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.viewholder> {
             tv5 = (TextView)itemView.findViewById(R.id.tv5);
             tv6 = (TextView)itemView.findViewById(R.id.tv6);
             img = (ImageView)itemView.findViewById(R.id.img);
+            rb = (Button)itemView.findViewById(R.id.rb);
+            dbu = FirebaseDatabase.getInstance().getReference("cart");
+
+
+            rb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String id = dbu.push().getKey();
+                    dbu.child(id).removeValue();
+                }
+            });
+
+
         }
     }
 }

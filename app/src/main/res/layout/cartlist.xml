@@ -89,6 +89,19 @@
                 android:paddingLeft="20dp"
                 />
 
+            <Button
+                android:id="@+id/rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="150dp"
+                android:text="Remove from cart"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                />
+
+
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

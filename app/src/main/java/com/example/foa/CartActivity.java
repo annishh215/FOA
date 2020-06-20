@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,6 +22,8 @@ import java.util.List;
 
 public class CartActivity extends AppCompatActivity {
 
+    private Button rb,cb,pb;
+
     private RecyclerView rv;
     private RecyclerView.Adapter ac;
     private List<cartlist> cli;
@@ -28,6 +34,10 @@ public class CartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+
+        rb = (Button)findViewById(R.id.rb);
+        cb = (Button)findViewById(R.id.cb);
+        pb = (Button)findViewById(R.id.pb);
 
         rv = (RecyclerView)findViewById(R.id.rv);
         rv.setHasFixedSize(true);
@@ -54,5 +64,30 @@ public class CartActivity extends AppCompatActivity {
 
             }
         });
+
+        cb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbu.removeValue();
+            }
+        });
+
+        pb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbu.removeValue();
+                Intent i = new Intent(getBaseContext(),MainActivity.class);
+                startActivity(i);
+                Toast.makeText(getApplicationContext(), "Order Placed!",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+
+
+
+
+
     }
 }
