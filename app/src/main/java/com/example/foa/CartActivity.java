@@ -49,7 +49,8 @@ public class CartActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 cli = new ArrayList<>();
                 for (DataSnapshot postsnapshot: dataSnapshot.getChildren()){
-                   cartlist Li = new cartlist(postsnapshot.child("q").getValue().toString(),
+                   cartlist Li = new cartlist(postsnapshot.getKey(),
+                           postsnapshot.child("q").getValue().toString(),
                            postsnapshot.child("imgurl").getValue().toString(),
                            postsnapshot.child("f").getValue().toString(),
                            postsnapshot.child("p").getValue().toString());

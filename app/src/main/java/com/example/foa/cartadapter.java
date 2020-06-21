@@ -77,11 +77,10 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.viewholder> {
             rb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String id = dbu.push().getKey();
-                    dbu.child(id).removeValue();
+                    cartlist cl = cli.get(getAbsoluteAdapterPosition());
+                    dbu.child(cl.id).setValue(null);
                 }
             });
-
 
         }
     }

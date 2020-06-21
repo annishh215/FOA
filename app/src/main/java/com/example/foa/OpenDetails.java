@@ -72,7 +72,7 @@ public class OpenDetails extends AppCompatActivity {
             public void onClick(View v) {
                 String q = tv3.getText().toString();
                 String id = dbu.push().getKey();
-                cartlist cl = new cartlist(q,imgurl,f,p);
+                cartlist cl = new cartlist(id,q,imgurl,f,p);
                 dbu.child(id).setValue(cl);
             }
         });
@@ -84,9 +84,6 @@ public class OpenDetails extends AppCompatActivity {
                 startActivity(s);
             }
         });
-
-
-
 
     }
 }
