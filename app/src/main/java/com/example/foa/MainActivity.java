@@ -16,7 +16,10 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView nv = findViewById(R.id.naview);
         nv.setNavigationItemSelectedListener(this);
+        nv.bringToFront();
 
         drla = findViewById(R.id.drla);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drla, tb, R.string.open_toggle, R.string.close_toggle);
@@ -88,8 +92,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+    }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+       switch (item.getItemId()){
+            case  R.id.exit:
+                finishAffinity();
+                break;
 
+           case R.id.cart:
+               Intent i = new Intent(getBaseContext(), CartActivity.class);
+               startActivity(i);
+        }
+        return true;
     }
 
     @Override
@@ -102,14 +118,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.exit:
-                finish();
-                System.exit(0);
-                break;
-        }
-        return true;
-    }
 }

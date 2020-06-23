@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -27,6 +29,8 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView rv;
     private RecyclerView.Adapter ac;
     private List<cartlist> cli;
+    private int t;
+    private int c,n;
 
     private DatabaseReference dbu;
 
@@ -34,6 +38,7 @@ public class CartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+
 
         rb = (Button)findViewById(R.id.rb);
         cb = (Button)findViewById(R.id.cb);
@@ -43,6 +48,24 @@ public class CartActivity extends AppCompatActivity {
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
         dbu = FirebaseDatabase.getInstance().getReference("cart");
+
+        dbu.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                t = 0;
+                for (DataSnapshot totsnapshot: dataSnapshot.getChildren()){
+                    c = Integer.parseInt(totsnapshot.child("p").getValue().toString());
+                    n = Integer.parseInt(totsnapshot.child("q").getValue().toString());
+                    t = t + (n*c);
+                }
+                pb.setText("Place order cart total: "+t);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         dbu.addValueEventListener(new ValueEventListener() {
             @Override
@@ -83,12 +106,6 @@ public class CartActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
             }
         });
-
-
-
-
-
-
 
     }
 }

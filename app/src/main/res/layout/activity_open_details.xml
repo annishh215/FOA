@@ -3,12 +3,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2e6d9"
     >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textSize="45sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        />
 
     <ImageView
         android:id="@+id/img"
         android:layout_width="500dp"
         android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="centerCrop"
         />
 
     <TextView
@@ -18,8 +30,9 @@
         android:text=" "
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="370dp"
         android:layout_marginLeft="130dp"
+        android:textColor="#4d4d4d"
         />
 
     <TextView
@@ -29,28 +42,31 @@
         android:text=" "
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="430dp"
         android:layout_marginLeft="130dp"
+        android:textColor="#4d4d4d"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="370dp"
         android:text="Name:"
         android:textSize="30sp"
         android:textStyle="bold"
         android:paddingLeft="30dp"
+        android:textColor="#4d4d4d"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="430dp"
         android:text="Price:"
         android:textSize="30sp"
         android:textStyle="bold"
         android:paddingLeft="30dp"
+        android:textColor="#4d4d4d"
         />
 
     <Button
@@ -58,9 +74,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="510dp"
         android:layout_marginLeft="90dp"
         android:textSize="25sp"
+        android:background="#cce0ff"
         />
 
     <Button
@@ -68,9 +85,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="510dp"
         android:layout_marginLeft="220dp"
         android:textSize="25sp"
+        android:background="#cce0ff"
         />
 
     <TextView
@@ -80,29 +98,34 @@
         android:text="1"
         android:textAlignment="center"
         android:paddingTop="10dp"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="510dp"
         android:layout_marginLeft="180dp"
         android:textSize="25sp"
+        android:textColor="#4d4d4d"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Qty"
-        android:layout_marginLeft="180dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginLeft="177dp"
+        android:layout_marginTop="478dp"
         android:textSize="30sp"
+        android:textColor="#4d4d4d"
         />
 
     <Button
         android:id="@+id/b3"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:text="Add to order"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="560dp"
+        android:layout_marginTop="590dp"
         android:layout_marginLeft="80dp"
+        android:background="#cce0ff"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
         />
 
     <Button
@@ -113,7 +136,8 @@
         android:textAlignment="center"
         android:textSize="30sp"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="640dp"
+        android:layout_marginTop="680dp"
+        android:background="#cce0ff"
         />
 
 </RelativeLayout>

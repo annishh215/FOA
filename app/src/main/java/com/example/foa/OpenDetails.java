@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -74,6 +75,8 @@ public class OpenDetails extends AppCompatActivity {
                 String id = dbu.push().getKey();
                 cartlist cl = new cartlist(id,q,imgurl,f,p);
                 dbu.child(id).setValue(cl);
+                Toast.makeText(getApplicationContext(), "Item added to cart!",
+                        Toast.LENGTH_LONG).show();
             }
         });
 

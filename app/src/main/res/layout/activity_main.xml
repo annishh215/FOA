@@ -6,7 +6,8 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    android:background="#f2e6d9">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -33,7 +34,8 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/navhead"
         app:menu="@menu/navdra"
-         />
+        android:background="#f2e6d9"
+        />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -49,6 +51,9 @@
             android:textStyle="bold"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="80dp"
+            android:background="#cce0ff"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             />
 
         <TextView

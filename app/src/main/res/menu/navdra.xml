@@ -2,11 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/cart"
+            android:title="View cart"
+            />
+
         <item android:id="@+id/exit"
             android:title="Exit"
             />
     </group>
-
-
-
 </menu>
